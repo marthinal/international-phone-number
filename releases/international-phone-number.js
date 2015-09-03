@@ -12,12 +12,12 @@
         link: function(scope, element, attrs, ctrl) {
           var handleWhatsSupposedToBeAnArray, options, read, watchOnce;
           if (ctrl) {
-            if (element.val() !== '') {
-              $timeout(function() {
+            $timeout(function() {
+              if (element.val() !== '') {
                 element.intlTelInput('setNumber', element.val());
                 return ctrl.$setViewValue(element.val());
-              }, 0);
-            }
+              }
+            }, 0);
           }
           read = function() {
             return ctrl.$setViewValue(element.val());
